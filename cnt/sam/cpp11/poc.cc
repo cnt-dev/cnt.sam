@@ -1,8 +1,14 @@
 #include <pybind11/pybind11.h>
+#include "poc.h"
 
 int add(int i, int j) {
     return i + j;
 }
+
+int poc_value() {
+    return poc::POC_VALUE;
+}
+
 
 namespace py = pybind11;
 
@@ -31,6 +37,8 @@ PYBIND11_MODULE(cpp11_poc, m) {
 
         Some other explanation about the subtract function.
     )pbdoc");
+
+    m.def("poc_value", &poc_value);
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;
