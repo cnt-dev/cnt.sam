@@ -30,7 +30,8 @@ ext_modules = [
                 include_dirs=[
                         # Path to pybind11 headers
                         Pybind11IncludePath(),
-                        Pybind11IncludePath(user=True)
+                        Pybind11IncludePath(user=True),
+                        'cnt/sam/cpp11',
                 ],
                 language='c++'),
 ]
