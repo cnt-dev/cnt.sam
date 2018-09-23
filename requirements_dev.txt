@@ -13,6 +13,6 @@ tox==3.4.0
 yapf==0.24.0
 pylint==2.1.1
 mypy==0.630
-pytest==3.8.0
+pytest==3.8.1
 pytest-runner==4.2
 coverage==4.5.1
