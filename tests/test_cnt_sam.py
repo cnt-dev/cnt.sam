@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """Tests for `cnt_sam` package."""
 
 import pytest
-
 
 from cnt import sam
 

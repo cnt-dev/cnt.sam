@@ -25,13 +25,16 @@ class Pybind11IncludePath(object):
 
 ext_modules = [
         Extension(
-                'cpp11_poc',
-                ['cnt/sam/cpp11/poc.cc'],
+                '_sam_impl',
+                [
+                        'cnt/sam/cpp11/sam.cc',
+                        'cnt/sam/cpp11/main.cc',
+                ],
                 include_dirs=[
                         # Path to pybind11 headers
                         Pybind11IncludePath(),
                         Pybind11IncludePath(user=True),
-                        'cnt/sam/cpp11',
+                        'cnt/sam',
                 ],
                 language='c++'),
 ]
