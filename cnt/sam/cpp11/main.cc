@@ -21,7 +21,8 @@ PYBIND11_MODULE(_sam_impl, m) {
              py::arg("factor"), py::arg("maxlen_limit") = -1)
         .def("finalize", &sam::SamStateOpt::Finalize)
         .def("occur_count", &sam::SamStateOpt::OccurCount)
-        .def("occur_degree", &sam::SamStateOpt::OccurDegree);
+        .def("occur_degree", &sam::SamStateOpt::OccurDegree,
+             py::arg("factor"), py::arg("cap") = 1000.0);
 
 
 #ifdef VERSION_INFO

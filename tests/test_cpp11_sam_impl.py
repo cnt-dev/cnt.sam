@@ -1,5 +1,6 @@
 import string
 import random
+import numpy
 import _sam_impl
 
 
@@ -50,3 +51,13 @@ def test_occur_with_limit():
     opt.finalize()
 
     assert opt.occur_count(to_ints(factor)) == expected_occur
+
+
+def test_occur_degree():
+    opt = _sam_impl.SamStateOpt()
+    opt.online(to_ints('ab' * 10**5))
+    opt.online(to_ints('xyz'))
+    opt.finalize()
+
+    numpy.testing.assert_almost_equal(opt.occur_degree(to_ints('ab')), 2.0, decimal=3)
+    numpy.testing.assert_almost_equal(opt.occur_degree(to_ints('xyz'), cap=100.0), 100.0)

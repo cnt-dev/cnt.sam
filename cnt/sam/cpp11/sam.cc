@@ -201,16 +201,22 @@ int SamStateOpt::OccurCount(const std::vector<CharType> &factor) {
   return state == nullptr ? -1 : state->touch();
 }
 
-double SamStateOpt::OccurDegree(const std::vector<CharType> &factor) {
+double SamStateOpt::OccurDegree(
+    const std::vector<CharType> &factor, double cap) {
   auto occur = OccurCount(factor);
   if (occur < 0) {
     return -1.0;
   }
+  // to log space.
   double log_prob = log(occur);
   for (auto c : factor) {
     log_prob -= log(symbol_cnt_.at(c));
   }
   log_prob += (factor.size() - 1) * log(symbol_total_cnt_);
+  // check for cap to avoid overflow.
+  if (cap > 0 && log_prob > log(cap)) {
+    return cap;
+  }
   return exp(log_prob);
 }
 

@@ -16,3 +16,4 @@ mypy==0.630
 pytest==3.8.1
 pytest-runner==4.2
 coverage==4.5.1
+numpy==1.15.2

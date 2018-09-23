@@ -73,13 +73,14 @@ class SamStateOpt {
   ~SamStateOpt();
 
   void OnlineConstructSymbol(CharType symbol, int maxlen_limit);
-  void OnlineConstructFactor(const std::vector<CharType> &factor, int maxlen_limit);
+  void OnlineConstructFactor(
+      const std::vector<CharType> &factor, int maxlen_limit);
   void Finalize();
 
   // Inference.
   SamStatePtr Walk(const std::vector<CharType> &factor);
   int OccurCount(const std::vector<CharType> &factor);
-  double OccurDegree(const std::vector<CharType> &factor);
+  double OccurDegree(const std::vector<CharType> &factor, double cap);
   int OutCount();
   double OutDegree(const CharType symbol);
 
