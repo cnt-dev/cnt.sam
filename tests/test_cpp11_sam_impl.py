@@ -4,9 +4,12 @@ import _sam_impl
 
 
 def ascii_without(size, factor):
+    other = ''.join(set(string.ascii_lowercase) - set(factor))
+    fill = ''.join(random.choices(other, k=len(factor)))
+
     text = ''.join(random.choices(string.ascii_lowercase, k=size))
-    text = text.replace(factor, ''.join(random.choices(string.ascii_lowercase, k=len(factor))))
-    return text
+    text = text.replace(factor, fill)
+    return other + text + other
 
 
 def to_ints(text):
@@ -18,7 +21,7 @@ def test_occur():
 
     # Not occur.
     opt = _sam_impl.SamStateOpt()
-    opt.online(to_ints(ascii_without(256 * 1024, factor)))
+    opt.online(to_ints(ascii_without(256 * 100, factor)))
     opt.finalize()
 
     assert opt.occur_count(to_ints(factor)) == -1
@@ -28,7 +31,7 @@ def test_occur():
     expected_occur = 10
     opt = _sam_impl.SamStateOpt()
     for _ in range(expected_occur):
-        opt.online(to_ints(ascii_without(256 * 102, factor)))
+        opt.online(to_ints(ascii_without(256 * 10, factor)))
         opt.online(to_ints(factor))
     opt.finalize()
 
