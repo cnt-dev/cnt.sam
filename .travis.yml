@@ -1,4 +1,11 @@
 # Config file for automatic testing at travis-ci.org
+os:
+  - linux
+  - osx
+
+compiler:
+  - gcc
+  - clang
 
 language: python
 python:
