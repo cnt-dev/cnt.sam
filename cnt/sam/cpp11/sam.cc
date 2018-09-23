@@ -197,12 +197,14 @@ SamStatePtr SamStateOpt::Walk(const std::vector<CharType> &factor) {
 }
 
 int SamStateOpt::OccurCount(const std::vector<CharType> &factor) {
+  // Occurrence of factor.
   auto state = Walk(factor);
   return state == nullptr ? -1 : state->touch();
 }
 
 double SamStateOpt::OccurDegree(
     const std::vector<CharType> &factor, double cap) {
+  // Measure how "unlikely" the factor is randomly seleted.
   auto occur = OccurCount(factor);
   if (occur < 0) {
     return -1.0;
@@ -218,6 +220,24 @@ double SamStateOpt::OccurDegree(
     return cap;
   }
   return exp(log_prob);
+}
+
+int SamStateOpt::OutCount(const std::vector<CharType> &factor) {
+  // The number of "options".
+  auto state = Walk(factor);
+  return state == nullptr ? -1 : state->trans().size();
+}
+
+double SamStateOpt::OutDegree(
+    const std::vector<CharType> &factor, const CharType symbol) {
+  // The weight of one option.
+  auto state = Walk(factor);
+  if (state == nullptr || !state->has_trans(symbol)) {
+    return -1.0;
+  }
+  auto next_state = state->trans(symbol);
+  // Approximated.
+  return exp(log(next_state->touch()) - log(state->touch()));
 }
 
 }  // namespace sam

@@ -61,3 +61,23 @@ def test_occur_degree():
 
     numpy.testing.assert_almost_equal(opt.occur_degree(to_ints('ab')), 2.0, decimal=3)
     numpy.testing.assert_almost_equal(opt.occur_degree(to_ints('xyz'), cap=100.0), 100.0)
+
+
+def test_out_count():
+    opt = _sam_impl.SamStateOpt()
+    opt.online(to_ints('ababacacad'))
+    opt.finalize()
+
+    assert opt.out_count(to_ints('a')) == 3
+    assert opt.out_count(to_ints('b')) == 1
+    assert opt.out_count(to_ints('c')) == 1
+    assert opt.out_count(to_ints('d')) == 0
+
+
+def test_out_degree():
+    opt = _sam_impl.SamStateOpt()
+    opt.online(to_ints('abc' * (3 * 10**3)))
+    opt.online(to_ints('abe' * (2 * 10**3)))
+    opt.finalize()
+
+    numpy.testing.assert_almost_equal(opt.out_degree(to_ints('ab'), ord('c')), 0.6)

@@ -14,15 +14,19 @@ PYBIND11_MODULE(_sam_impl, m) {
     py::class_<sam::SamState>(m, "SamState");
 
     py::class_<sam::SamStateOpt>(m, "SamStateOpt")
+        // Build.
         .def(py::init<>())
         .def("online", &sam::SamStateOpt::OnlineConstructSymbol,
              py::arg("symbol"), py::arg("maxlen_limit") = -1)
         .def("online", &sam::SamStateOpt::OnlineConstructFactor,
              py::arg("factor"), py::arg("maxlen_limit") = -1)
         .def("finalize", &sam::SamStateOpt::Finalize)
+        // Inference.
         .def("occur_count", &sam::SamStateOpt::OccurCount)
         .def("occur_degree", &sam::SamStateOpt::OccurDegree,
-             py::arg("factor"), py::arg("cap") = 1000.0);
+             py::arg("factor"), py::arg("cap") = 1000.0)
+        .def("out_count", &sam::SamStateOpt::OutCount)
+        .def("out_degree", &sam::SamStateOpt::OutDegree);
 
 
 #ifdef VERSION_INFO

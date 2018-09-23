@@ -79,10 +79,12 @@ class SamStateOpt {
 
   // Inference.
   SamStatePtr Walk(const std::vector<CharType> &factor);
+
   int OccurCount(const std::vector<CharType> &factor);
   double OccurDegree(const std::vector<CharType> &factor, double cap);
-  int OutCount();
-  double OutDegree(const CharType symbol);
+
+  int OutCount(const std::vector<CharType> &factor);
+  double OutDegree(const std::vector<CharType> &factor, const CharType symbol);
 
  private:
   SamStatePtr root_ = nullptr;
