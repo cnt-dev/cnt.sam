@@ -76,8 +76,8 @@ def test_out_count():
 
 def test_out_degree():
     opt = _sam_impl.SamStateOpt()
-    opt.online(to_ints('abc' * (3 * 10**3)))
-    opt.online(to_ints('abe' * (2 * 10**3)))
+    opt.online(to_ints('abc' * (3 * 10**5)))
+    opt.online(to_ints('abe' * (2 * 10**5)))
     opt.finalize()
 
     numpy.testing.assert_almost_equal(opt.out_degree(to_ints('ab'), ord('c')), 0.6)
