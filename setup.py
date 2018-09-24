@@ -133,7 +133,7 @@ setup(
         test_suite='tests',
         tests_require=test_requirements,
         url='https://github.com/cnt-dev/cnt.sam',
-        version='0.1.0',
+        version='0.1.1',
         zip_safe=False,
         # pybind11.
         ext_modules=ext_modules,
