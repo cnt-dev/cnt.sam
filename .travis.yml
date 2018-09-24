@@ -1,29 +1,17 @@
-# Config file for automatic testing at travis-ci.org
 compiler:
-  - gcc
-  - clang
-
+- gcc
+- clang
 language: python
 python:
-  - 3.6
-
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- 3.6
 install: pip install -U tox-travis
-
-# Command to run tests, e.g. python setup.py test
 script: tox
-
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
-  # TODO: investigate how to built for different platforms.
   distributions: sdist
   user: huntzhan
   password:
-    secure: uHnlH6lsYhmETZ1tNU4hGwdEelDWz2KzaR28brdN7HJqvjbRSeCDo3rRwfNjA1ZXJaIXd+zisVc05/IofqniN0LPbJS8lIAQ7wKHBPDIqkrJzew93+V1/fc0QFxdVdyK4f4r+syCNtFXFlfdh7maFCVBjnFdi+svH5wdJ90WX1NS/dvP6CWCawtg7rHXm4TsZ92o/EFtblyFOkVZ+IIC6bHQg/WjsKHsaWfDs4W1lhgc1VILHxfl9Q/ztoXIDZP6hOROkc6SBiCQkiCzJZczl9lPs71liZLGcT2aWcZj5/QdbkSJhYKZW+MNed5Zq9d9c1ZlLsQR3ldPATXYLSoB06ZITQZRPqOo98NLYYt/4jnl5s1RgOtbkdM8mzeVMhNT2rVmJKQTQOmMVHd1ay3TGcH9xDL2b4xYyjtIajBF0qkcq1Z/wNJb4IfE+t6I8Whwz6nvHaVVmjHUPLUJHrDNwWpJHXQwMD08Av6Oq+scyIchXB0E7bjCOJo2yJc48wlvYmEH/PU5wv1zUANQ0dKpaLf9WBYkQe9Tcp1P/1TYKdrf4B+Np/u3/HN/MfDCjZt+V3kFbyJv+yl3VdDN9t3pDxu43KZrNmj1w4Nl5T1L21EmNT60kCznLLb/vsljUzY7A0puJYnhxzoPeX8RoSbQN25doDErwHGG+8KHsuqW8aw=
+    secure: cWEel4EE2yyXl1G9DgHRugki/1gowXMmLHbLrZ6UzOlcnIfdawqr1oclCTAlOJMPSzVPwKwZyNTlB5yvlm/j6Wa2GrBNqKi1UNsZsW0Vod3PpEd9LmB5e69Yfy8cTYjAf8HQLXPZv1qUBvceqy07TFzhf27JQjbyTQDJoAKiW9b5Z5oeN3EDUuuQxvrbIfnRXfC5OyBX9h0ObU4Y87gpxrQTAt2f2h5SWzDEKKrJXYGtv9JZP21yFQVnf036EsU6AJBSXoQvato0L7E50BheXWHzjUqw1+MdjxDUXxSFjbpLicnLwtgwjFNoW8wUMZpsi22jj5CiTq+WdiYUO8fSPSOk5yCq+1uqabL5O90Hme/b55qoqTzvBWEax4wxi+ib7xrOADgpF936E0x82/Wf8xyyo8qiAd2mRtSXyTG6YzIup5GSMUKBP8WMPpfjQa+eVokpTLlkkHwg4hqpkCS2NFM6M/Gm4TqgMN03igUPvQX4GqP++eNuAQ5SMK81hqUZifuRjMRaxWtUtYRhQnN4p8pbbcNKPNYm5dslFhB9nWUa1/3Fn/sfCJa69CJtZszuEzMV8X6B6dUCztv9YUxEYCPXypWefoaqqM2y9Jx8jQeSEZawAEYiR5lrgdsfzWINsXZyd/VDlTvaZGzt0bTDIrJyxeaC9dnriHC4L6W+LPg=
   on:
     tags: true
     repo: cnt-dev/cnt.sam
