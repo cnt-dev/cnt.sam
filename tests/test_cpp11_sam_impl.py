@@ -1,7 +1,7 @@
 import string
 import random
 import numpy
-import _sam_impl
+from cnt.sam import _sam_impl
 
 
 def ascii_without(size, factor):

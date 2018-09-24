@@ -25,7 +25,7 @@ class Pybind11IncludePath(object):
 
 ext_modules = [
         Extension(
-                '_sam_impl',
+                'cnt.sam._sam_impl',
                 [
                         'cnt/sam/cpp11/sam.cc',
                         'cnt/sam/cpp11/main.cc',
