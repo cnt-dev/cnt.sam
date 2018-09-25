@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Tests for `cnt_sam` package."""
+"""Tests for `cnt.sam` package."""
 
 import pytest
 

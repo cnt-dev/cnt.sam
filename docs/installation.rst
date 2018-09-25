@@ -12,7 +12,7 @@ To install cnt.sam, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install cnt_sam
+    $ pip install cnt.sam
 
 This is the preferred method to install cnt.sam, as it will always install the most recent stable release.
 
@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/huntzhan/cnt_sam
+    $ git clone git://github.com/cnt-dev/cnt.sam
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/huntzhan/cnt_sam/tarball/master
+    $ curl  -OL https://github.com/cnt-dev/cnt.sam/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/huntzhan/cnt_sam
-.. _tarball: https://github.com/huntzhan/cnt_sam/tarball/master
+.. _Github repo: https://github.com/cnt-dev/cnt.sam
+.. _tarball: https://github.com/cnt-dev/cnt.sam/tarball/master

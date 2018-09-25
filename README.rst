@@ -3,11 +3,11 @@ cnt.sam
 =======
 
 
-.. image:: https://img.shields.io/pypi/v/cnt_sam.svg
-        :target: https://pypi.python.org/pypi/cnt_sam
+.. image:: https://img.shields.io/pypi/v/cnt.sam.svg
+        :target: https://pypi.python.org/pypi/cnt.sam
 
-.. image:: https://img.shields.io/travis/huntzhan/cnt_sam.svg
-        :target: https://travis-ci.org/huntzhan/cnt_sam
+.. image:: https://img.shields.io/travis/cnt-dev/cnt.sam.svg
+        :target: https://travis-ci.org/cnt-dev/cnt.sam
 
 .. image:: https://readthedocs.org/projects/cnt-sam/badge/?version=latest
         :target: https://cnt-sam.readthedocs.io/en/latest/?badge=latest
