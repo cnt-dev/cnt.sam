@@ -1,5 +1,5 @@
 # Package.
-pip==18.0
+pip==18.1
 wheel==0.31.1
 bumpversion==0.5.3
 
