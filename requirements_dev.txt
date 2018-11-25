@@ -10,7 +10,7 @@ twine==1.12.1
 
 # CI.
 tox==3.5.2
-yapf==0.24.0
+yapf==0.25.0
 pylint==2.1.1
 mypy==0.641
 pytest==3.8.2
